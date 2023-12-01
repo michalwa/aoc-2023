@@ -22,7 +22,6 @@ alnums_greedy --> [].
 digit(X) --> [X], { char_type(X, decimal_digit) }.
 
 % Part 2
-digit('0') --> "zero".
 digit('1') --> "one".
 digit('2') --> "two".
 digit('3') --> "three".
