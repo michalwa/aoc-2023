@@ -11,7 +11,7 @@ Rust solutions can be run with: `cargo run -- <solution> <input-file>`
 |  Day | Answers       |              Prolog               |               Rust                |
 | ---: | ------------- | :-------------------------------: | :-------------------------------: |
 |    1 | :star: :star: | [:white_check_mark:](src/day1.pl) | [:white_check_mark:](src/day1.rs) |
-|    2 |               |                                   |                                   |
+|    2 | :star: :star: | [:white_check_mark:](src/day2.pl) |                                   |
 |    3 |               |                                   |                                   |
 |    4 |               |                                   |                                   |
 |    5 |               |                                   |                                   |
