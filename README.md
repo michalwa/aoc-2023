@@ -2,7 +2,9 @@
 
 ## Usage
 
-Prolog solutions are written to be run with [Scryer Prolog](https://github.com/mthom/scryer-prolog). They should all accept the path to the input file as the first argument, so that they can be run with: `scryer-prolog <solution> -g run -- <input-file>`
+Prolog solutions are written to be run with [Scryer Prolog](https://github.com/mthom/scryer-prolog). They should all define a `run/0` predicate and accept the path to the input file as the first argument, so that they can be run with: `scryer-prolog <solution> -g run -- <input-file>`
+
+Rust solutions can be run with: `cargo run -- <solution> <input-file>`
 
 ## Progress
 
