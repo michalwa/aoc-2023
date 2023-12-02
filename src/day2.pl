@@ -3,7 +3,6 @@
 :- use_module(library(format)).
 :- use_module(library(pio)).
 :- use_module(library(lists)).
-:- use_module(library(iso_ext)).
 :- use_module(library(pairs)).
 
 games([G|Gs])   --> game(G), "\n", games(Gs).
@@ -28,13 +27,12 @@ digit(D)        --> [D], { char_type(D, decimal_digit) }.
 
 % Part 1
 
-possible_count(red,   N) :- N =< 12.
-possible_count(green, N) :- N =< 13.
-possible_count(blue,  N) :- N =< 14.
+possible_count(red-N)   :- N =< 12.
+possible_count(green-N) :- N =< 13.
+possible_count(blue-N)  :- N =< 14.
 
-possible_reveals(Rs) :-
-  forall(member(Cs, Rs),
-    forall(member(C-N, Cs), possible_count(C, N))).
+possible_counts(Cs) :- maplist(possible_count, Cs).
+possible_reveals(Rs) :- maplist(possible_counts, Rs).
 
 games_possible([], []).
 games_possible([Id-Rs|Gs], PGs) :-
