@@ -9,34 +9,34 @@ module Enumerable
   end
 end
 
-grid = File.readlines(ARGV[0], chomp: true)
+lines = File.readlines(ARGV[0], chomp: true)
 
 sum = 0
 gear_parts = Hash.new { |hash, key| hash[key] = [] }
 
-grid.each_with_index do |line, y|
+lines.each_with_index do |line, y|
   offset = 0
-  loop do
-    match = line.match(/\d+/, offset) or break
+
+  while match = line.match(/\d+/, offset)
     left, right = match.begin(0), match.end(0)
     offset = right
     num = match.to_s.to_i
 
     # Part 1
-    has_adjacent_symbol = grid.around(y).any? do |adjacent_line|
+    has_adjacent_symbol = lines.around(y).any? do |adjacent_line|
       adjacent_line.chars.around(left...right).to_a.join.match?(/[^\d\.]/)
     end
     sum += num if has_adjacent_symbol
 
     # Part 2
-    grid.each_with_index.around(y) do |adjacent_line, y|
+    lines.each_with_index.around(y) do |adjacent_line, y|
       _, x = adjacent_line
         .chars
         .each_with_index
         .around(left...right)
         .find { |c, _| c == '*' }
 
-      break gear_parts[[y, x]] << num if x
+      break gear_parts[[x, y]] << num if x
     end
   end
 end
