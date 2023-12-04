@@ -13,7 +13,7 @@ Rust solutions can be run with: `cargo run -- <solution> <input-file>`
 |    1 | :star: :star: | [:white_check_mark:](src/day1.pl) | [:white_check_mark:](src/day1.rs) |                                   |
 |    2 | :star: :star: | [:white_check_mark:](src/day2.pl) |                                   |                                   |
 |    3 | :star: :star: |                                   |                                   | [:white_check_mark:](src/day3.rb) |
-|    4 |               |                                   |                                   |                                   |
+|    4 | :star: :star: | [:white_check_mark:](src/day4.pl) |                                   |                                   |
 |    5 |               |                                   |                                   |                                   |
 |    6 |               |                                   |                                   |                                   |
 |    7 |               |                                   |                                   |                                   |
